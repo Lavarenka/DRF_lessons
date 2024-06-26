@@ -161,3 +161,9 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 /drfsite/book/migrations/0001_initial.py
+/.idea/dataSources.xml
+/.idea/DRF_lessons.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/vcs.xml

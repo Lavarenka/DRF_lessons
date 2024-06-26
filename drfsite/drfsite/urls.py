@@ -15,11 +15,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
 
-from book.views import BookAPIView
+from book.views import *
+
+router = routers.DefaultRouter()
+router.register(r'post', PostViewSet, basename='post')
+# https://www.django-rest-framework.org/api-guide/routers/
+print(router.urls)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/booklist', BookAPIView.as_view())
+    path('api/v1/', include(router.urls))
+    # path('api/v1/booklist', PostViewSet.as_view({'get': 'list'})),
+    # path('api/v1/booklist/<int:pk>/', PostViewSet.as_view({'put': 'update'})),
+
+
 ]
